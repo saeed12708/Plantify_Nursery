@@ -7,6 +7,8 @@ from .views import OrderViewSet
 from .views import CartViewSet, FavoriteViewSet, NotificationViewSet
 from .views import BlogViewSet, LocationViewSet, OfferViewSet
 from .views import PaymentMethodViewSet,HomeBannerViewSet
+from .views import SignupView, LoginView,UserViewSet
+
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')

@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure--39xi)pnuo&5dampz3@tkmk=x%oo-agk3lkh6tgnv+54_xxtu@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['10.10.10.170', '127.0.0.1', 'localhost']
+
+# Enable CORS (install django-cors-headers first)
+
+
 AUTH_USER_MODEL = 'users_app.User'
 
 
@@ -42,9 +46,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'users_app',
     'plants_app',
-    'django_filters'
+    'django_filters',
+    'corsheaders',
 ]
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # ✅ Must be at the top
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,6 +61,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'plantyfy_Nursery.urls'
+MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 TEMPLATES = [
     {
@@ -134,5 +143,6 @@ REST_FRAMEWORK = {
     'rest_framework.renderers.BrowsableAPIRenderer',
 ],
 }
+CORS_ALLOW_ALL_ORIGINS = True
 
 
