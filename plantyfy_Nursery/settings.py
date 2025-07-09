@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--39xi)pnuo&5dampz3@tkmk=x%oo-agk3lkh6tgnv+54_xxtu@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.10.10.170', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['10.10.10.185', '127.0.0.1', 'localhost']
 
 # Enable CORS (install django-cors-headers first)
 
